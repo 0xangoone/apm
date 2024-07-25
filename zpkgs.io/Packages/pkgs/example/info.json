@@ -1,0 +1,6 @@
+{
+    "ptype":"Media",
+    "content":"./example.png",
+    "cpu_arch":"All",
+    "requirements":{}
+}
