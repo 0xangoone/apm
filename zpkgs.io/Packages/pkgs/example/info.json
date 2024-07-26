@@ -1,7 +1,7 @@
 {
     "name":"example",
     "ptype":"Media",
-    "content":"./example.png",
+    "content":"https://download1649.mediafire.com/oq4curabco1gJhpP21v9H9YUKHVpW44NVsbGq38VAjT3NuRA2wAD6kadEp90LbFTH5CuLzdRB3EJ-kGUkld9JWyg21hdLlOWKNfcbvTto42ZfnjJ-OqY41UTwxv8e8zVu8hpkNDHlwTGE6yhwZImBVKP67-X_Lv-5poimMeQbqkfFXk/odo38zik9rmnbn5/example.png",
     "cpu_arch":"All",
     "requirements":{}
 }
