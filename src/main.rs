@@ -46,6 +46,7 @@ impl PSConfig{
             }
             else if i.path.contains(&keyword){
                 out.push(i.path.clone());
+                continue;
             }
             match &i.description{
                 Some(e)=>{
@@ -114,17 +115,21 @@ impl PkgInfo{
         if self.cpu_arch == CpuArchs::All || self.cpu_arch == user.arch{
             match &self.requirements{
                 Some(e)=>{
-                    match &e.ram{Some(r_am)=>{if !(*r_am <= user.ram){return false;}},None=>{}}
-                    match &e.cpu_cores{Some(c_cpu_cores)=>{if !(*c_cpu_cores <= user.cores){return false;}},None=>{}}
-                    match &e.free_disk_space{Some(free_disk_space)=>{if !(*free_disk_space <= user.disk_free_space){return false;}},None=>{}}
-                    match &e.os{Some(os)=>{if !(user.os == *os){return false}},None=>{}}
+                    match &e.ram{Some(r_am)=>{if !(*r_am <= user.ram){
+                        println!("you need more ram space to get this package");return false;}},None=>{}}
+                    match &e.cpu_cores{Some(c_cpu_cores)=>{if !(*c_cpu_cores <= user.cores){
+                        println!("you need more cpu cores to get this package");return false;}},None=>{}}
+                    match &e.free_disk_space{Some(free_disk_space)=>{if !(*free_disk_space <= user.disk_free_space){
+                        println!("you need more free disk space to get this package");return false;}},None=>{}}
+                    match &e.os{Some(os)=>{if !(user.os == *os){
+                        println!("this package is not for your OS");return false}},None=>{}}
                     return true;
                 },
                 None=>{},
             }
             return true
         }
-
+        println!("this package is not for your cpu");
         return false;
     }
     pub async fn download(&mut self){
@@ -164,9 +169,9 @@ async fn download_from_net(url:String,path:String) {
     let out = reqwest::get(url.clone()).await.unwrap().bytes().await.unwrap();
     let mut n_path = path.clone();
     let splitted = url.split(".").collect::<Vec<&str>>();
-    let extecnsion = splitted[splitted.len() - 1];
+    let extension = splitted[splitted.len() - 1];
     n_path.push('.');
-    n_path.push_str(extecnsion);
+    n_path.push_str(extension);
     let mut f = std::fs::File::create(n_path).unwrap();
     f.write_all(&out);
 }
@@ -210,7 +215,7 @@ async fn download_p(p_name:String){
     println!("init the package manger ...");
     let mut pkgs_config=init_zpm().await;
 
-    println!("search about package ....");
+    println!("searching about package ....");
     let p_path = pkgs_config.get_package_path_from_name(p_name.clone());
     if p_path.is_empty(){
         println!("{} is not found !",p_name);
@@ -226,9 +231,37 @@ async fn download_p(p_name:String){
     let mut p_info = PkgInfo::decode_json(p_info_json);
     println!("downloading to disk......");
     p_info.download().await;
-    println!("File was downloaded successfully ");
+    println!("Package was downloaded successfully ");
+}
+async fn search_p(keyword:String){
+    println!("init the package manger ...");
+    let mut pkgs_config=init_zpm().await;
+
+    println!("searching about package ....");
+    let mut result = pkgs_config.search_package(keyword);
+    if result.is_empty(){
+        println!("package was not found!");
+    }
+    println!("search resaults: ");
+    for mut i in &mut result{
+        i.push_str("/info.json");
+        let p_info_json = reqwest::get( i.clone() ).await.unwrap().text().await.unwrap();
+        let mut p_info = PkgInfo::decode_json(p_info_json);
+        println!("{:#?}",p_info);
+
+    }
 }
 #[tokio::main]
 async fn main() {
-    download_p("example".to_string()).await;
+    let mut args = std::env::args();
+    if args.len() <= 2{
+        return;
+    }
+    let option = args.nth(1).unwrap();
+    if option == "install"{
+        download_p(args.nth(0).unwrap()).await;
+    }else if option == "search"{
+        search_p(args.nth(0).unwrap()).await;
+    }
+    
 }
