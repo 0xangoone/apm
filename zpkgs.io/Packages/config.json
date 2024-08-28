@@ -1,8 +1,7 @@
 {
     "packages":[
         {
-            "name":"example",
-            "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/example/"
+            "name":"WinFirefox129",
         }
     ]
 }
