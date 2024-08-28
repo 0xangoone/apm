@@ -2,6 +2,9 @@
     "packages":[
         {
             "name":"WinFirefox129",
+        },
+        {
+            "name":"WinSuperTux",
         }
     ]
 }
