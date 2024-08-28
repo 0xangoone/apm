@@ -2,7 +2,7 @@
     "name":"Firefox",
     "ptype":"Application",
     "content":"https://ftp.mozilla.org/pub/firefox/releases/129.0/win64/ar/Firefox%20Setup%20129.0.exe",
-    "cpu_arch":"X86",
+    "cpu_arch":"Amd64",
     "requirements":{
       "OS":"Windows"
     }
