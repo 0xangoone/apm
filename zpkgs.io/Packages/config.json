@@ -1,10 +1,10 @@
 {
     "packages":[
         {
-            "name":"WinFirefox129",
+            "name":"WinFirefox129"
         },
         {
-            "name":"WinSuperTux",
+            "name":"WinSuperTux"
         }
     ]
 }
