@@ -1,11 +1,12 @@
 {
     "packages":[
         {
-            "name":"WinFirefox129"
+            "name":"WinFirefox129",
             "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinFirefox128/"
         },
         {
-            "name":"WinSuperTux"
+            "name":"WinSuperTux",
+            "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinSuperTux/"
         }
     ]
 }
