@@ -1,0 +1,9 @@
+{
+    "name":"WinNeofetch",
+    "ptype":"Application",
+    "content":"https://github.com/nepnep39/neofetch-win/releases/download/v1.2.1/neofetch121.msi",
+    "cpu_arch":"Amd64",
+    "requirements":{
+      "os":"Windows"
+    }
+}
