@@ -206,7 +206,7 @@ impl UserSystemInfo{
 
 
 async fn init_zpm()->PSConfig{
-    let pm_config_url = "https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/config.json".to_string();
+    let pm_config_url = "https://raw.githubusercontent.com/0xangoone/apm/main/zpkgs.io/Packages/config.json".to_string();
     let pm_config_json =reqwest::get(pm_config_url).await.unwrap().text().await.unwrap();
     let mut pkgs_config=  PSConfig::decode_json(pm_config_json);
     return pkgs_config;
