@@ -2,15 +2,18 @@
     "packages":[
         {
             "name":"WinFirefox129",
-            "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinFirefox128"
+            "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinFirefox128",
+            "description":"firefox 129 for windows , firefox is a web browser ! "
         },
         {
             "name":"WinSuperTux",
-            "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinSuperTux"
+            "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinSuperTux",
+            "description":"SuperTux For Windows a platforms game "
         },
         {
             "name":"WinFasm",
-            "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinFasm"
+            "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinFasm",
+            "description":"developer tool, flat assembler , an cross platform assembler "
         }
     ]
 }
