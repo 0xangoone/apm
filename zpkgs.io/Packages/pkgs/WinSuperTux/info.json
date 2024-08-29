@@ -4,6 +4,6 @@
     "content":"https://github.com/SuperTux/supertux/releases/download/v0.6.3/SuperTux-v0.6.3-win64.msi",
     "cpu_arch":"Amd64",
     "requirements":{
-      "OS":"Windows"
+      "os":"Windows"
     }
 }
