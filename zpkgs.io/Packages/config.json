@@ -7,6 +7,10 @@
         {
             "name":"WinSuperTux",
             "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinSuperTux"
+        },
+        {
+            "name":"WinFasm",
+            "path":"https://raw.githubusercontent.com/0xangoone/zpm/main/zpkgs.io/Packages/pkgs/WinFasm"
         }
     ]
 }
