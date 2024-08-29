@@ -1,0 +1,9 @@
+{
+    "name":"WinFasm",
+    "ptype":"Application",
+    "content":"https://flatassembler.net/fasmw17332.zip",
+    "cpu_arch":"Amd64",
+    "requirements":{
+      "os":"Windows"
+    }
+}
