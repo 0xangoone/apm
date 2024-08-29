@@ -1,0 +1,9 @@
+{
+    "name":"HxD",
+    "ptype":"Application",
+    "content":"https://mh-nexus.de/downloads/HxDdeu.zip",
+    "cpu_arch":"Amd64",
+    "requirements":{
+      "os":"Windows"
+    }
+}
